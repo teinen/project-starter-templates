@@ -1,5 +1,5 @@
 FROM ruby:2.5.1
-LABEL maintainer="teinen.github@gmail.com"
+LABEL maintainer="yourmail@domain.com"
 
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs postgresql-client vim
 
