@@ -14,16 +14,16 @@
 $ docker-compose build
 ```
 
-### Create database
-
-```bash
-$ docker-compose run --rm web bundle exec rails db:create
-```
-
 ### Run docker containers
 
 ```bash
 $ docker-compose up -d
+```
+
+### Create database
+
+```bash
+$ docker-compose run --rm web bundle exec rails db:create
 ```
 
 ### Stop docker container
