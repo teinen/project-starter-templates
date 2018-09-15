@@ -23,5 +23,11 @@ $ docker-compose run --rm web bundle exec rails db:create
 ### Run docker containers
 
 ```bash
-$ docker-compose up
+$ docker-compose up -d
+```
+
+### Stop docker container
+
+```bash
+$ docker-compose stop
 ```
