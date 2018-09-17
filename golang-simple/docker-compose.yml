@@ -1,0 +1,9 @@
+version: '3'
+services:
+  go:
+    build: .
+    command: go run /go/src/myapp/main.go
+    volumes:
+      - ./myapp:/go/src/myapp
+    ports:
+      - "8080:8080"
