@@ -2,7 +2,12 @@
 
 ## Overview
 
-Project Starter Simple Templates with Docker container!
+Simple project starter templates with docker/docker-compose.
+
+## Install docker/docker-compose
+
+- [docker](https://docs.docker.com/install/)
+- [docker-compose](https://docs.docker.com/compose/install/)
 
 ## Template List
 
