@@ -16,7 +16,7 @@ $ docker-compose build
 
 ### Create rails app
 ```bash
-$ docker-compose run --rm web bundle exec rails new . --database=mysql --skip-bundle
+$ docker-compose run web bundle exec rails new . --database=mysql --skip-bundle
 ```
 
 ### Update `/myapp/config/database.yml`
@@ -29,12 +29,6 @@ default: &default
   username: root
   password: password # set 'MYSQL_ROOT_PASSWORD' on docker-compose.yml
   host: db # set service name on docker-compose.yml
-```
-
-### Run docker containers
-
-```bash
-$ docker-compose up -d
 ```
 
 ### Create database
