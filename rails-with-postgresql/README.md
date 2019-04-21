@@ -16,35 +16,33 @@ $ docker-compose build
 
 ### Create rails app
 ```bash
-$ docker-compose run web bundle exec rails new . --database=postgres --skip-bundle
+$ docker-compose run --rm web bundle exec rails new . --force --database=postgresql --skip-bundle
 ```
 
 ### Update `/myapp/config/database.yml`
 
 ```yml
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: password # set 'MYSQL_ROOT_PASSWORD' on docker-compose.yml
-  host: db # set service name on docker-compose.yml
+  ### Add host, username, password ###
+  host: db
+  username: postgres
+  password:
 ```
 
 ### Create database
 
 ```bash
-$ docker-compose run --rm web bundle exec rails db:create
+$ docker-compose build
+$ docker-compose run web bundle exec rails db:create
 ```
 
 ### Stop docker container
 
 ```bash
 $ docker-compose stop
-```
-
-### Create docker image
-
-```bash
-$ docker-compose build
 ```
